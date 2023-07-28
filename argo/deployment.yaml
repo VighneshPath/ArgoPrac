@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: micronautguide
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: myalias=ghcr.io/vighneshpath/argoprac/micronautguide
+    argocd-image-updater.argoproj.io/myalias.update-strategy: latest
 spec:
   replicas: 1
   revisionHistoryLimit: 3
