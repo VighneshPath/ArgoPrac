@@ -14,7 +14,8 @@ spec:
         app: micronautguide
     spec:
       containers:
-        - image: ghcr.io/vighneshpath/argoprac/micronautguide:0.1.2
+        - image: ghcr.io/vighneshpath/argoprac/micronautguide:0.1.3
           name: micronautguide
           ports:
             - containerPort: 8083
+              hostPort: 8083
