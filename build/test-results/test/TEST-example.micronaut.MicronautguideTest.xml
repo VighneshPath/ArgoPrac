@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="example.micronaut.MicronautguideTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-27T11:16:45" hostname="Vigneshs-MacBook-Pro.local" time="0.008">
-  <properties/>
-  <testcase name="testItWorks()" classname="example.micronaut.MicronautguideTest" time="0.008"/>
-  <system-out><![CDATA[?[36m16:46:45.234?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment?[0;39m - Established active environments: [test]
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
