@@ -24,7 +24,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Login to docker registry
-        run: echo ${{secrets.CR_PAT} | docker login ghcr.io -u VighneshPath --password-stdin
+        run: echo ${{secrets.CR_PAT}} | docker login ghcr.io -u VighneshPath --password-stdin
 
       - name: Push image to docker registry
         run: ./gradlew dockerPushRegistry
