@@ -23,9 +23,6 @@ jobs:
           java-version: '17.0.1'
           distribution: 'temurin'
 
-      - name: Run build
-        run: ./gradlew build
-
       - name: Login to docker registry
         run: docker login ${{ env.REGISTRY_NAME }} -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
 
