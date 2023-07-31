@@ -28,3 +28,6 @@ jobs:
 
       - name: Push image to docker registry
         run: ./gradlew dockerPushRegistry
+
+      - name: Push image to docker registry
+        run: ./gradlew dockerPushLatest
