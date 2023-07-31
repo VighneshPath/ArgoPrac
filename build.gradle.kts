@@ -7,7 +7,7 @@ plugins {
     id("com.palantir.docker") version "0.35.0"
 }
 
-version = "0.1.6"
+version = "0.1.7"
 group = "example.micronaut"
 
 val kotlinVersion=project.properties.get("kotlinVersion")
@@ -62,7 +62,7 @@ docker {
     setDockerfile(File("Dockerfile"))
     copySpec.from("build/libs").into("libs")
     buildArgs(mapOf("version" to "${project.version}"))
-    tag("Registry", "${System.getenv("REGISTRY_URL")}/${project.name}:${project.version}")
+    tag("Registry", "${System.getenv("REGISTRY_URL")}/${project.name}:${project.version} ${System.getenv("REGISTRY_URL")}/${project.name}:latest")
 }
 
 
