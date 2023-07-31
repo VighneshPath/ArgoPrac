@@ -6,8 +6,7 @@ resources:
   - service.yaml
 
 images:
-- name: the-my-app
-- newName: ghcr.io/vighneshpath/argoprac/micronautguide
+- name: ghcr.io/vighneshpath/argoprac/micronautguide
   newTag: 0.1.6
 
 # Add any customizations here, such as common labels, annotations, and patches
