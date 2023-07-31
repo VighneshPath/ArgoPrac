@@ -25,17 +25,17 @@ jobs:
       - name: Login to docker registry
         run: echo ${{secrets.CR_PAT}} | docker login ghcr.io -u VighneshPath --password-stdin
 
-      # - name: Push image to docker registry
-      #   run: ./gradlew dockerPushRegistry
+      - name: Push image to docker registry
+        run: ./gradlew dockerPushRegistry
 
       - name: Kustomize set
         run: |
           cd ./kutomize
-          kustomize edit set image my-app=ghcr.io/vighneshpath/argoprac/micronautguide:0.1.8
+          kustomize edit set image my-app=ghcr.io/vighneshpath/argoprac/micronautguide:0.1.9
           git config --global user.email "git@bot.com"
           git config --global user.name "Git Bot"
           git add .
-          git commit -m "Set app image tag to 0.1.8"
+          git commit -m "Set app image tag to 0.1.9"
           git push
 
       # - name: Push image to docker registry

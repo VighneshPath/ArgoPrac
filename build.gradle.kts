@@ -7,7 +7,7 @@ plugins {
     id("com.palantir.docker") version "0.35.0"
 }
 
-version = "0.1.8"
+version = "0.1.9"
 group = "example.micronaut"
 
 val kotlinVersion=project.properties.get("kotlinVersion")
