@@ -10,5 +10,5 @@ class HelloController {
 
     @Get
     @Produces(MediaType.TEXT_PLAIN)
-    fun index() = "Hello World 0.1.7"
+    fun index() = "Hello World 0.1.8"
 }
