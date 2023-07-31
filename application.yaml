@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: micronautguide
+spec:
+  # The name of the Argo CD project where the application will be deployed
+  project: my-project
+
+  # Source of the application manifests
+  source:
+    repoURL: https://github.com/VighneshPath/ArgoPrac # Replace with your repository URL
+    targetRevision: main # Replace with the branch or tag you want to deploy
+    path: kustomization # Path to the Kustomization directory
+
+  # Destination to deploy the application
+  destination:
+    server: https://kubernetes.default.svc # Replace with your Kubernetes API server URL
+    namespace: argo # Replace with your target namespace
+
+  # Sync policy defines how the application should be automatically synced
+  syncPolicy:
+    automated: {} # Use "manual: {}" for manual syncs
+
+
+  # (Optional) Add any additional settings or configuration for the application
+  # For example, you can add health checks, hooks, or resource customizations here
+  # ...
