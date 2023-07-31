@@ -62,7 +62,8 @@ docker {
     setDockerfile(File("Dockerfile"))
     copySpec.from("build/libs").into("libs")
     buildArgs(mapOf("version" to "${project.version}"))
-    tag("Registry", "${System.getenv("REGISTRY_URL")}/${project.name}:${project.version} ${System.getenv("REGISTRY_URL")}/${project.name}:latest")
+    tag("Registry", "${System.getenv("REGISTRY_URL")}/${project.name}:${project.version}")
+    tag("Registry", "${System.getenv("REGISTRY_URL")}/${project.name}:latest")
 }
 
 
