@@ -6,8 +6,11 @@ resources:
   - service.yaml
 
 images:
-- name: ghcr.io/vighneshpath/argoprac/micronautguide
-  newTag: 0.1.6
+  - name: ghcr.io/vighneshpath/argoprac/micronautguide
+    newTag: 0.1.6
+
+commonAnnotations:
+  argocd-image-updater.argoproj.io/image-list: "ghcr.io/vighneshpath/argoprac/micronautguide"
 
 # Add any customizations here, such as common labels, annotations, and patches
 # For example:
