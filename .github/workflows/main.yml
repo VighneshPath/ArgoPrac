@@ -28,10 +28,9 @@ jobs:
       - name: Push image to docker registry
         run: ./gradlew dockerPushRegistry
 
-      - uses: Kustomize set
-        with:
-          working_directory: ./kutomize
-      - run: |
+      - name: Kustomize set
+        run: |
+          cd ./kutomize
           kustomize edit set image my-app=ghcr.io/vighneshpath/argoprac/micronautguide:0.1.8
           git add .
           git commit -m "Set `app` image tag to `0.1.8`"
