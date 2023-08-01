@@ -20,7 +20,7 @@ spec:
       containers:
         - image: {{ .Values.appImage.repository }}:{{ .Values.appImage.tag }}
           name: micronautguide
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8083
               hostPort: 8083
