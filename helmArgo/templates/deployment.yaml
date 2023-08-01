@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micronautguide
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: micronautguide
+  template:
+    metadata:
+      annotations:
+        argocd-image-updater.argoproj.io/image-list: myalias=ghcr.io/vighneshpath/argoprac/micronautguide
+        argocd-image-updater.argoproj.io/myalias.update-strategy: semver
+      labels:
+        app: micronautguide
+    spec:
+      containers:
+        - image: {{ .Values.appImage.repository }}: {{ .Values.appImage.tag }}
+          name: micronautguide
+          ports:
+            - containerPort: 8083
+              hostPort: 8083

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: micronautguide
+spec:
+  ports:
+    - port: 8083
+      targetPort: 8083
+  selector:
+    app: micronautguide
