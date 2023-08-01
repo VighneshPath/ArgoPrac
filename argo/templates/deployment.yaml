@@ -18,7 +18,7 @@ spec:
 
     spec:
       containers:
-        - image: {{ .Values.appImage.repository }}:{{ .Values.appImage.tag }}
+        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           name: micronautguide
           imagePullPolicy: IfNotPresent
           ports:
