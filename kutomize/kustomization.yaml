@@ -8,7 +8,7 @@ resources:
 images:
 - name: my-app
   newName: ghcr.io/vighneshpath/argoprac/micronautguide
-  newTag: 0.1.9
+  newTag: "0.2"
 
 commonAnnotations:
   argocd-image-updater.argoproj.io/image-list: myalias=ghcr.io/vighneshpath/argoprac/micronautguide
