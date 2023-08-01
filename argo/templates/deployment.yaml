@@ -15,9 +15,11 @@ spec:
         argocd-image-updater.argoproj.io/myalias.update-strategy: semver
       labels:
         app: micronautguide
+
     spec:
+      serviceAccountName: myapp-service-account
       containers:
-        - image: {{ .Values.appImage.repository }}: {{ .Values.appImage.tag }}
+        - image: {{ .Values.appImage.repository }}:{{ .Values.appImage.tag }}
           name: micronautguide
           ports:
             - containerPort: 8083
