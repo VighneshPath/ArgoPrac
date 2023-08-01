@@ -29,6 +29,20 @@ jobs:
       - name: Push image to docker registry
         run: ./gradlew dockerPushRegistry
 
+      - name: Update kustomize
+        run : |
+          ./gradlew kustomize
+          if git diff --exit-code ./kutomize; then
+              echo "No changes in kustomization.yaml. Skipping commit."
+          else
+              echo "Changes detected in kustomization.yaml. Committing..."
+              git config --global user.email "ci@example.com"  # Set your desired email for the CI/CD bot
+              git config --global user.name "CI/CD Bot"       # Set your desired username for the CI/CD bot
+              git add ./kutomize
+              git commit -m "Update version in kustomization.yaml"
+              git push
+          fi
+
       # - name: Kustomize set
       #   run: |
       #     cd ./kutomize

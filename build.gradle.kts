@@ -66,6 +66,17 @@ docker {
     tag("Latest", "${System.getenv("REGISTRY_URL")}/${project.name}:latest")
 }
 
+tasks.register("kustomize") {
+    doLast{
+        exec {
+            workingDir = File("./kutomize")
+            commandLine =
+                "kustomize edit set image my-app=${System.getenv("REGISTRY_URL")}/${project.name}:${project.version}".split(
+                    " "
+                )
+        }
+    }
+}
 
 tasks.getByName("docker").onlyIf {
     !tasks.getByName("shadowJar").state.upToDate
